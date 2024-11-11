@@ -224,7 +224,7 @@ final class InteractiveComponentRenderer
 
     private function closeTerminal(Terminal $terminal): void
     {
-        $terminal->cursor->moveDown()->clearLine()->moveUp();
+        $terminal->cursor->moveDown()->clearAfter()->moveUp();
         $terminal->switchToNormalMode();
         stream_set_blocking(STDIN, true);
     }
